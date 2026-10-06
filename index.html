@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Academic dashboard</p>
+          <h1>Student Management System</h1>
+        </div>
+        <div class="topbar-badge">Live records</div>
+      </header>
+
+      <section class="stats-grid">
+        <div class="stat-card accent-blue">
+          <span>Total Students</span>
+          <strong id="total-students">0</strong>
+        </div>
+        <div class="stat-card accent-green">
+          <span>Active</span>
+          <strong id="active-students">0</strong>
+        </div>
+        <div class="stat-card accent-purple">
+          <span>Graduated</span>
+          <strong id="graduated-students">0</strong>
+        </div>
+      </section>
+
+      <main class="content-grid">
+        <section class="panel form-panel">
+          <div class="panel-header">
+            <h2 id="form-title">Add Student</h2>
+          </div>
+
+          <form id="student-form">
+            <div class="field-grid">
+              <label>
+                <span>Student ID</span>
+                <input id="student-id" type="text" placeholder="e.g. STU-1001" required />
+              </label>
+
+              <label>
+                <span>Full Name</span>
+                <input id="student-name" type="text" placeholder="Jane Doe" required />
+              </label>
+
+              <label>
+                <span>Email</span>
+                <input id="student-email" type="email" placeholder="jane@example.com" required />
+              </label>
+
+              <label>
+                <span>Course</span>
+                <input id="student-course" type="text" placeholder="Computer Science" required />
+              </label>
+
+              <label>
+                <span>Year</span>
+                <input id="student-year" type="number" min="1" max="8" placeholder="2" required />
+              </label>
+
+              <label>
+                <span>Status</span>
+                <select id="student-status">
+                  <option value="Active">Active</option>
+                  <option value="On Leave">On Leave</option>
+                  <option value="Graduated">Graduated</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" id="submit-btn" class="primary-btn">Add Student</button>
+              <button type="button" id="cancel-btn" class="secondary-btn hidden">Cancel</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="panel list-panel">
+          <div class="panel-header search-row">
+            <h2>Student List</h2>
+            <input id="search-input" type="search" placeholder="Search students..." />
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Course</th>
+                  <th>Year</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="student-table-body"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
